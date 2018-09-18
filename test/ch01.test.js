@@ -1,11 +1,12 @@
 const { expect } = require('chai');
 
 const {
+  flatten,
+  arrayAverage,
   Grades,
   forwardBackward,
   MonthlyTemps,
-  flatten,
-  arrayAverage
+  WordLetters
 } = require('../ch01');
 
 describe('flatten', () => {
@@ -95,5 +96,19 @@ describe(`3. Modify the weeklyTemps object in the chapter so that it stores a mo
     expect(w.allWeeksAverage()).to.equal(
       'Week 1 average is 25.8 | Week 2 average is 27.0 | Week 3 average is 27.5 | Week 4 average is 23.4'
     );
+  });
+});
+
+describe(`4. Create an object that stores individual letters in an array and has a function for displaying the letters as a single word.`, () => {
+  const sampleArray = ['h', 'e', 'l', 'l'];
+  const wordLetters = new WordLetters(sampleArray);
+
+  it('should store letters in an array', () => {
+    wordLetters.add('o');
+    expect(wordLetters.letters).to.eql(['h', 'e', 'l', 'l', 'o']);
+  });
+
+  it('should have a function for displaying the letters as a single word', () => {
+    expect(wordLetters.toWord()).to.equal('hello');
   });
 });

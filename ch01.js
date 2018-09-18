@@ -51,8 +51,6 @@ const forwardBackward = arr => {
 
 /* 
 3. Modify the weeklyTemps object in the chapter so that it stores a month’s worth of data using a two-dimensional array. Create functions to display the monthly average, a specific week’s average, and all the weeks’ averages.
-
-[[12, 12, 12, 12, 12, 12, 12], [13, 13, 13, 13, 13, 13, 13], [14, 14, 14, 14, 14, 14, 14], [15, 15, 15, 15, 15, 15, 15]]
 */
 
 class MonthlyTemps {
@@ -84,10 +82,33 @@ class MonthlyTemps {
   }
 }
 
+/* 
+4. Create an object that stores individual letters in an array and has a function for displaying the letters as a single word. 
+*/
+
+class WordLetters {
+  constructor(letters = []) {
+    this._letters = letters.splice(0);
+  }
+
+  add(letter) {
+    return this._letters.push(letter);
+  }
+
+  toWord() {
+    return this._letters.join('');
+  }
+
+  get letters() {
+    return this._letters;
+  }
+}
+
 module.exports = {
   Grades,
   forwardBackward,
   MonthlyTemps,
+  WordLetters,
   flatten,
   arrayAverage
 };
