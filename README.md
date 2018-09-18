@@ -7,4 +7,4 @@
 
 ##### Running tests
 
-3. `npm test`
+`npm test`
